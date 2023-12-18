@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: wheat;
+}
+
+.firstButton,.secondButton,.thirdButton {
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 700;
+    align-items: center;
+    color: white;
+    width: 150px;
+    height: 60px;
+    background-color: rgb(96, 82, 82);
+    transform: rotate(-25deg) skew(26deg) translate(0,0); 
+    border-radius: 5px;
+    border: 1.5px solid black;
+    box-sizing: border-box;
+    box-shadow: rgb(29, 28, 28) -100px 100px 30px 10px;
+    transition: all 0.3s ease-in;
+}
+
+.firstButton::before,
+.secondButton::before,
+.thirdButton::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(96, 82, 82);
+    width: 16px;
+    height: 100%;
+    top: 1px;
+    left: -17.5px;
+    transform-origin: right;
+    transform: skewY(-48deg);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1.5px solid black;
+    border-right: 0px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+}
+
+.firstButton::after,
+.secondButton::after,
+.thirdButton::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(96, 82, 82);
+    width: 100%;
+    height: 17px;
+    top: 58px;
+    left: -8.4px;
+    transform: skewX(-43deg);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-right: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+} 
+
+.secondParent1,.secondParent2,.secondParent3 {
+    transition: all 0.3s ease-in;
+}
+
+.secondParent1:hover,.secondParent2:hover,.secondParent3:hover {
+    .firstButton {
+        background-color: white;
+        color: black;
+    }
+    .firstButton::after,.firstButton::before {
+        background-color: white;
+    }
+     margin-top: -30px;
+    transition: all 0.3s ease-in;
+}
+
+.secondParent2:hover {
+    .secondButton {
+        background-color: white;
+        color: black;
+    }
+    .secondButton::after,.secondButton::before {
+        background-color: white;
+    }
+}
+
+.secondParent3:hover {
+    .thirdButton {
+        background-color: white;
+        color: black;
+    }
+    .thirdButton::after,.thirdButton::before {
+        background-color: white;
+    }
+}
